@@ -1,25 +1,74 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-  <title>TÜV Rheinland | DAP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#075985">
+  <meta name="description" content="Portal digital empresarial desarrollado por DAP. Próximamente disponible.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Portal Empresarial | DAP</title>
+  <!-- Icono existente de DAP Chat Studio como referencia provisional. Sustituir por el favicon corporativo DAP cuando esté disponible. -->
+  <link rel="icon" type="image/png" href="https://www.dapanalytics.com/assets/DAP_CHAT_STUDIO_ICONO_2.png">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      text-align: center;
-      padding: 80px 20px;
-    }
-    h1 { color: #0071b9; }
+    :root { color-scheme: dark; --dap-blue:#075985; --navy:#061421; --cyan:#20c4ff; --green:#42c928; }
+    *, *::before, *::after { box-sizing:border-box; }
+    html { min-height:100%; }
+    body { margin:0; min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; background:var(--navy); color:#fff; }
+    .navbar { display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:78px; padding:12px clamp(18px,5vw,76px); background:var(--dap-blue); border-bottom:1px solid rgba(255,255,255,.17); position:relative; z-index:2; }
+    .brand { display:inline-flex; align-items:center; gap:16px; min-width:0; color:#fff; text-decoration:none; }
+    .brand-logo { display:block; width:108px; height:48px; object-fit:contain; flex-shrink:0; }
+    .brand-text { font-size:14px; line-height:1.4; font-weight:500; }
+    .user-status { display:inline-flex; align-items:center; gap:11px; padding:9px 14px; border:1px solid rgba(255,255,255,.27); border-radius:999px; background:rgba(0,0,0,.12); white-space:nowrap; }
+    .user-avatar { width:34px; height:34px; display:grid; place-items:center; border-radius:50%; background:rgba(255,255,255,.15); }
+    .user-avatar svg { width:21px; height:21px; stroke:#fff; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+    .user-copy { display:grid; gap:2px; }
+    .user-copy strong { font-size:12px; font-weight:650; }
+    .user-copy span { font-size:11px; color:#d7ecf8; }
+    .main { position:relative; isolation:isolate; flex:1; display:flex; align-items:center; justify-content:center; min-height:490px; padding:64px 24px; text-align:center; overflow:hidden; background-color:#071d2d; background-image:linear-gradient(100deg,rgba(3,17,29,.88),rgba(5,27,43,.74) 54%,rgba(3,17,29,.78)),linear-gradient(0deg,rgba(2,12,23,.55),transparent 55%),url('assets/FONDO_SUBWEB_TUV_DAP.png'); background-position:center; background-size:cover; }
+    .main::before { content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(circle at 25% 40%,rgba(0,170,255,.17),transparent 45%),radial-gradient(circle at 80% 70%,rgba(66,201,40,.09),transparent 35%); }
+    .content { width:min(790px,100%); }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; padding:9px 17px; border-radius:100px; border:1px solid rgba(32,196,255,.4); background:rgba(4,24,39,.45); backdrop-filter:blur(8px); color:#c4f0ff; font-size:12px; font-weight:750; letter-spacing:.14em; text-transform:uppercase; }
+    .dot { width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 12px rgba(66,201,40,.65); }
+    h1 { margin:28px auto 20px; max-width:780px; font-size:clamp(36px,5vw,67px); line-height:1.1; letter-spacing:-.045em; text-shadow:0 12px 40px rgba(0,0,0,.5); }
+    h1 span { color:#77d9f8; }
+    .description { max-width:650px; margin:0 auto; color:#e3f0f7; font-size:clamp(15px,1.6vw,18px); line-height:1.8; text-shadow:0 2px 14px rgba(0,0,0,.6); }
+    .divider { width:72px; height:3px; border-radius:3px; margin:30px auto 0; background:linear-gradient(90deg,#00aaff,#20e2a3,#42c928); }
+    .signature { margin-top:26px; color:#c4dce8; font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
+    .footer { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px 24px; padding:20px clamp(18px,5vw,76px); background:linear-gradient(120deg,#04121c,#09263b); border-top:1px solid rgba(32,196,255,.25); color:#c9dfec; font-size:12px; }
+    .footer strong { color:#fff; }
+    .footer a { color:#a6e7ff; text-decoration:none; }
+    .footer a:hover { text-decoration:underline; }
+    a:focus-visible { outline:2px solid #fff; outline-offset:5px; }
+    @media (max-width:640px) { .navbar { min-height:68px; padding:10px 16px; } .brand { gap:10px; } .brand-logo { width:80px; height:40px; } .brand-text { max-width:150px; font-size:11px; } .user-status { padding:7px; } .user-copy { display:none; } .user-avatar { width:31px; height:31px; } .main { min-height:450px; padding:70px 20px; } .footer { justify-content:center; text-align:center; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; } }
   </style>
 </head>
 <body>
-  <h1>TÜV Rheinland</h1>
-  <h2>Plataforma Digital</h2>
-  <p>Aplicación desarrollada por DAP</p>
-  <p>Configuración inicial exitosa.</p>
+  <header class="navbar">
+    <a href="https://www.dapanalytics.com/" class="brand" aria-label="Ir a DAP">
+      <img class="brand-logo" src="https://www.dapanalytics.com/assets/Logo_DAP_verde-azul_blanco.png" alt="DAP">
+      <span class="brand-text">Digitalización y Automatización de Procesos</span>
+    </a>
+    <!-- Solo indicador visual. No es un login ni verifica sesión todavía. -->
+    <div class="user-status" aria-label="Estado de usuario: acceso no iniciado">
+      <span class="user-avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21c0-4.5 3-7 7.5-7s7.5 2.5 7.5 7"/></svg></span>
+      <span class="user-copy"><strong>Mi cuenta</strong><span>Acceso no iniciado</span></span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content">
+      <div class="eyebrow"><span class="dot"></span> Portal empresarial · En desarrollo</div>
+      <h1>Estamos construyendo una <span>nueva experiencia digital.</span></h1>
+      <p class="description">Este espacio se encuentra actualmente en desarrollo. Próximamente estará disponible un entorno diseñado para facilitar el acceso a herramientas, información y servicios digitales de manera segura y eficiente.</p>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="signature">Tecnología y automatización por DAP</p>
+    </div>
+  </main>
+  <footer class="footer">
+    <div><strong>DAP</strong> · Digitalización y Automatización de Procesos</div>
+    <div>© <span id="year">2026</span> DAP. Todos los derechos reservados.</div>
+    <div><a href="https://www.dapanalytics.com/">www.dapanalytics.com</a></div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
