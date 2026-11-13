@@ -4,150 +4,146 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#075985">
-  <meta name="description" content="Portal digital empresarial desarrollado por DAP. Próximamente disponible.">
+  <meta name="description" content="Portal empresarial de TÜV Rheinland México desarrollado por DAP.">
   <meta name="robots" content="noindex, nofollow">
-  <title>Portal Empresarial | DAP</title>
-  <!-- Icono existente de DAP Chat Studio como referencia provisional. Sustituir por el favicon corporativo DAP cuando esté disponible. -->
+  <title>Portal Empresarial | TÜV Rheinland México</title>
   <link rel="icon" type="image/png" href="https://tuvrheinland.dapanalytics.com/assets/TUV_Logo_Triangulo_1.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <style>
     :root { color-scheme: dark; --dap-blue:#075985; --navy:#061421; --cyan:#20c4ff; --green:#42c928; }
     *, *::before, *::after { box-sizing:border-box; }
     html { min-height:100%; }
     body { margin:0; min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; background:var(--navy); color:#fff; }
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    min-height: 78px;
-    padding: 12px clamp(18px, 5vw, 76px);
-
-    /* Degradado de azul claro a azul corporativo */
-    background: linear-gradient(
-        90deg,
-        #d9f3fa 0%,
-        #8dc9dd 38%,
-        #3285a8 70%,
-        #075985 100%
-    );
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-    position: relative;
-    z-index: 2;
-}
-
-
-.brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 16px;
-    min-width: 0;
-    color: #174b65;
-    text-decoration: none;
-}
-.brand-logo {
-    display: block;
-    width: 108px;
-    height: 48px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-.brand-text {
-    font-size: 14px;
-    line-height: 1.4;
-    font-weight: 600;
-    color: #174b65;
-}
-
-.user-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 11px;
-    padding: 9px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.30);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(8px);
-    white-space: nowrap;
-}
-
-.user-avatar {
-    width: 34px;
-    height: 34px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.user-avatar svg {
-    width: 21px;
-    height: 21px;
-    stroke: #ffffff;
-    fill: none;
-    stroke-width: 1.7;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-.user-copy {
-    display: grid;
-    gap: 2px;
-}
-.user-copy strong {
-    font-size: 12px;
-    font-weight: 650;
-    color: #ffffff;
-}
-.user-copy span {
-    font-size: 11px;
-    color: #d7ecf8;
-}
-
+    .navbar { display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:78px; padding:12px clamp(18px,5vw,76px); background:linear-gradient(90deg,#d9f3fa 0%,#8dc9dd 38%,#3285a8 70%,#075985 100%); border-bottom:1px solid rgba(255,255,255,.25); position:relative; z-index:2; }
+    .brand { display:inline-flex; align-items:center; gap:16px; min-width:0; color:#174b65; text-decoration:none; }
+    .brand-logo { display:block; width:108px; height:48px; object-fit:contain; flex-shrink:0; }
+    .brand-text { font-size:14px; line-height:1.4; font-weight:600; color:#174b65; }
+    .user-status { display:inline-flex; align-items:center; gap:11px; padding:9px 14px; border:1px solid rgba(255,255,255,.3); border-radius:999px; background:rgba(255,255,255,.1); backdrop-filter:blur(8px); white-space:nowrap; }
+    .user-avatar { width:34px; height:34px; display:grid; place-items:center; border-radius:50%; background:rgba(255,255,255,.15); }
+    .user-avatar svg { width:21px; height:21px; stroke:#fff; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+    .user-copy { display:grid; gap:2px; }
+    .user-copy strong { font-size:12px; font-weight:650; color:#fff; }
+    .user-copy span { font-size:11px; color:#d7ecf8; }
     .main { position:relative; isolation:isolate; flex:1; display:flex; align-items:center; justify-content:center; min-height:490px; padding:64px 24px; text-align:center; overflow:hidden; background-color:#071d2d; background-image:linear-gradient(100deg,rgba(3,17,29,.88),rgba(5,27,43,.74) 54%,rgba(3,17,29,.78)),linear-gradient(0deg,rgba(2,12,23,.55),transparent 55%),url('assets/FONDO_SUBWEB_TUV_DAP.png'); background-position:center; background-size:cover; }
     .main::before { content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(circle at 25% 40%,rgba(0,170,255,.17),transparent 45%),radial-gradient(circle at 80% 70%,rgba(66,201,40,.09),transparent 35%); }
-    .content { width:min(790px,100%); }
-    .eyebrow { display:inline-flex; align-items:center; gap:9px; padding:9px 17px; border-radius:100px; border:1px solid rgba(32,196,255,.4); background:rgba(4,24,39,.45); backdrop-filter:blur(8px); color:#c4f0ff; font-size:12px; font-weight:750; letter-spacing:.14em; text-transform:uppercase; }
+    .content { width:min(900px,100%); }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; padding:9px 17px; border-radius:100px; border:1px solid rgba(32,196,255,.4); background:rgba(4,24,39,.45); backdrop-filter:blur(8px); color:#c4f0ff; font-size:12px; font-weight:750; letter-spacing:.12em; text-transform:uppercase; }
     .dot { width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 12px rgba(66,201,40,.65); }
-    h1 { margin:28px auto 20px; max-width:780px; font-size:clamp(36px,5vw,67px); line-height:1.1; letter-spacing:-.045em; text-shadow:0 12px 40px rgba(0,0,0,.5); }
+    h1 { margin:24px auto 14px; font-size:clamp(32px,4.5vw,56px); line-height:1.12; letter-spacing:-.035em; text-shadow:0 12px 40px rgba(0,0,0,.5); }
     h1 span { color:#77d9f8; }
-    .description { max-width:650px; margin:0 auto; color:#e3f0f7; font-size:clamp(15px,1.6vw,18px); line-height:1.8; text-shadow:0 2px 14px rgba(0,0,0,.6); }
-    .divider { width:72px; height:3px; border-radius:3px; margin:30px auto 0; background:linear-gradient(90deg,#00aaff,#20e2a3,#42c928); }
-    .signature { margin-top:26px; color:#c4dce8; font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
+    .description { max-width:650px; margin:0 auto; color:#e3f0f7; font-size:clamp(15px,1.6vw,18px); line-height:1.7; }
+    .access-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; margin:38px auto 0; max-width:800px; }
+    .access-card { width:100%; min-height:205px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:28px 22px; border:1px solid rgba(125,213,246,.45); border-radius:20px; background:rgba(5,35,56,.78); backdrop-filter:blur(12px); color:#fff; cursor:pointer; transition:transform .2s,border-color .2s,background .2s; }
+    .access-card:hover { transform:translateY(-4px); border-color:#70e3dd; background:rgba(9,61,86,.9); }
+    .access-card:focus-visible { outline:3px solid #8ce8ff; outline-offset:4px; }
+    .access-card i { font-size:40px; color:#83e5f1; }
+    .access-card strong { font-size:19px; }
+    .access-card span { font-size:13px; color:#d3e9f3; }
+    .signature { margin-top:32px; color:#c4dce8; font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
     .footer { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px 24px; padding:20px clamp(18px,5vw,76px); background:linear-gradient(120deg,#04121c,#09263b); border-top:1px solid rgba(32,196,255,.25); color:#c9dfec; font-size:12px; }
     .footer strong { color:#fff; }
     .footer a { color:#a6e7ff; text-decoration:none; }
     .footer a:hover { text-decoration:underline; }
     a:focus-visible { outline:2px solid #fff; outline-offset:5px; }
-    @media (max-width:640px) { .navbar { min-height:68px; padding:10px 16px; } .brand { gap:10px; } .brand-logo { width:80px; height:40px; } .brand-text { max-width:150px; font-size:11px; } .user-status { padding:7px; } .user-copy { display:none; } .user-avatar { width:31px; height:31px; } .main { min-height:450px; padding:70px 20px; } .footer { justify-content:center; text-align:center; } }
-    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; } }
+    .modal { color:#174b65; }
+    .modal-content { background:#fff; border:1px solid #cce7ed; border-radius:20px; overflow:hidden; }
+    .modal-header { background:#eaf8f7; border-bottom:1px solid #d8e9eb; }
+    .modal-title { color:#174b65; font-weight:700; }
+    .aria-option { display:flex; align-items:center; gap:24px; padding:12px 4px; }
+    .aria-logo-link { display:flex; flex:0 0 160px; justify-content:center; align-items:center; min-height:145px; border-radius:16px; background:#f2f9fb; border:1px solid #d8e9eb; transition:transform .2s,border-color .2s; }
+    .aria-logo-link:hover { transform:translateY(-3px); border-color:#32a991; }
+    .aria-logo-link img { display:block; width:135px; max-height:130px; object-fit:contain; }
+    .aria-description h3 { font-size:1.2rem; color:#174b65; font-weight:700; }
+    .aria-description p { margin:8px 0 0; color:#607f8a; line-height:1.6; }
+    .aria-description small { color:#087e91; }
+    .development-icon { font-size:42px; color:#087e91; }
+    @media(max-width:640px) { .navbar { min-height:68px; padding:10px 16px; } .brand { gap:10px; } .brand-logo { width:80px; height:40px; } .brand-text { max-width:150px; font-size:11px; } .user-status { padding:7px; } .user-copy { display:none; } .user-avatar { width:31px; height:31px; } .main { min-height:450px; padding:55px 20px; } .access-grid { grid-template-columns:1fr; gap:14px; margin-top:28px; } .access-card { min-height:155px; } .aria-option { flex-direction:column; text-align:center; gap:16px; } .aria-logo-link { flex-basis:auto; width:180px; } .footer { justify-content:center; text-align:center; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
   </style>
 </head>
 <body>
   <header class="navbar">
     <a href="https://www.dapanalytics.com/" class="brand" aria-label="Ir a DAP">
-      <img class="brand-logo" src="https://tuvrheinland.dapanalytics.com/assets/Tuv_Logo_1.png" alt="DAP">
+      <img class="brand-logo" src="https://tuvrheinland.dapanalytics.com/assets/Tuv_Logo_1.png" alt="TÜV Rheinland">
       <span class="brand-text">Digitalización y Automatización de Procesos</span>
     </a>
-    <!-- Solo indicador visual. No es un login ni verifica sesión todavía. -->
+    <!-- Indicador visual: todavía no autentica usuarios. -->
     <div class="user-status" aria-label="Estado de usuario: acceso no iniciado">
       <span class="user-avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21c0-4.5 3-7 7.5-7s7.5 2.5 7.5 7"/></svg></span>
       <span class="user-copy"><strong>Mi cuenta</strong><span>Acceso no iniciado</span></span>
     </div>
   </header>
+
   <main class="main">
     <div class="content">
-      <div class="eyebrow"><span class="dot"></span> Portal empresarial · En desarrollo</div>
-      <h1>Estamos construyendo una <span>nueva experiencia digital.</span></h1>
-      <p class="description">Este espacio se encuentra actualmente en desarrollo. Próximamente estará disponible un entorno diseñado para facilitar el acceso a herramientas, información y servicios digitales de manera segura y eficiente.</p>
-      <div class="divider" aria-hidden="true"></div>
+      <div class="eyebrow"><span class="dot"></span> Portal empresarial · TÜV Rheinland México</div>
+      <h1>Bienvenido a nuestro <span>portal empresarial.</span></h1>
+      <p class="description">Selecciona tu tipo de acceso para consultar las herramientas y servicios digitales disponibles.</p>
+      <div class="access-grid">
+        <button type="button" class="access-card" data-bs-toggle="modal" data-bs-target="#personalModal">
+          <i class="bi bi-building" aria-hidden="true"></i>
+          <strong>Personal TÜV Rheinland México</strong>
+          <span>Herramientas para personal interno</span>
+        </button>
+        <button type="button" class="access-card" data-bs-toggle="modal" data-bs-target="#proveedoresModal">
+          <i class="bi bi-people" aria-hidden="true"></i>
+          <strong>Proveedores</strong>
+          <span>Accede a las aplicaciones disponibles</span>
+        </button>
+      </div>
       <p class="signature">Tecnología y automatización por DAP</p>
     </div>
   </main>
+
+  <!-- Modal de aplicaciones para proveedores -->
+  <div class="modal fade" id="proveedoresModal" tabindex="-1" aria-labelledby="proveedoresTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="proveedoresTitle">Aplicaciones para proveedores</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="aria-option">
+            <a class="aria-logo-link" href="https://tuvrheinland.dapanalytics.com/tuv_A01_aria" aria-label="Abrir ARIA, disponibilidad de auditorías" title="Ingresar a ARIA">
+              <img src="https://tuvrheinland.dapanalytics.com/assets/ARIA_Recursos" alt="Logotipo de ARIA">
+            </a>
+            <div class="aria-description">
+              <h3>ARIA | Disponibilidad de Auditorías</h3>
+              <p>Registra tu disponibilidad de auditorías.</p>
+              <small>Haz clic en la imagen para ingresar a ARIA.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de personal interno, pendiente de desarrollo -->
+  <div class="modal fade" id="personalModal" tabindex="-1" aria-labelledby="personalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="personalTitle">Personal TÜV Rheinland México</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-4 text-center">
+          <i class="bi bi-tools development-icon" aria-hidden="true"></i>
+          <h3 class="h5 mt-3">Sección en desarrollo</h3>
+          <p class="text-secondary mb-0">Próximamente estarán disponibles las herramientas para el personal de TÜV Rheinland México.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
     <div><strong>DAP</strong> · Digitalización y Automatización de Procesos</div>
     <div>© <span id="year">2026</span> DAP. Todos los derechos reservados.</div>
     <div><a href="https://www.dapanalytics.com/">www.dapanalytics.com</a></div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
