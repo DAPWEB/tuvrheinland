@@ -216,6 +216,67 @@
 
         }
 
+
+        
+/* ======================================== */
+/* PANTALLA DE ACCESO A ARIA                 */
+/* ======================================== */
+
+.aria-viewer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 30px 20px;
+    background: #f4f8fb;
+}
+
+.aria-access {
+    width: 100%;
+    max-width: 520px;
+    padding: 45px 35px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #d8e9eb;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(7, 89, 133, 0.10);
+}
+
+.aria-access-logo {
+    width: 190px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.aria-access h1 {
+    color: #174b65;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.aria-access p {
+    color: #607f8a;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.aria-access-button {
+    display: inline-block;
+    padding: 13px 30px;
+    background: #087e91;
+    color: #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.aria-access-button:hover {
+    background: #076779;
+    color: #ffffff;
+}
+
+
     </style>
 
 </head>
@@ -256,23 +317,39 @@
     <!-- APLICACIÓN ARIA                         -->
     <!-- ======================================== -->
 
-    <main
-        class="aria-viewer"
-        aria-label="ARIA | Auditor Resource & Integrated Availability"
-    >
 
-        <!-- WebApp de Google Apps Script -->
+<!-- ======================================== -->
+<!-- ACCESO DIRECTO A ARIA                    -->
+<!-- ======================================== -->
 
-        <iframe
-            class="aria-frame"
-            src="https://script.google.com/a/~/macros/s/AKfycbysTMWX2EWPNa294KPaskFG-TOuJeUZls6eafYftB8I_OwI7j536IqxsbTPGC_mwahcDg/exec"
-            title="ARIA | TÜV Rheinland A01"
-            allow="fullscreen"
-            allowfullscreen
+<main class="aria-viewer">
+
+    <section class="aria-access">
+
+        <img
+            src="https://dapanalytics.com/assets/ARIA_ICONO_NOMBRE.png"
+            alt="ARIA"
+            class="aria-access-logo"
         >
-        </iframe>
 
-    </main>
+        <h1>ARIA | Disponibilidad de Auditorías</h1>
+
+        <p>
+            Registra, administra y consulta tus periodos
+            de disponibilidad para servicios de auditoría.
+        </p>
+
+        <a
+            href="https://script.google.com/macros/s/AKfycbysTMWX2EWPNa294KPaskFG-TOuJeUZls6eafYftB8I_OwI7j536IqxsbTPGC_mwahcDg/exec"
+            class="aria-access-button"
+        >
+            Ingresar a ARIA
+        </a>
+
+    </section>
+
+</main>
+
 
 </body>
 
